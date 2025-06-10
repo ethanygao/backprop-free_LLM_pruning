@@ -25,7 +25,7 @@ pip install git+https://github.com/EleutherAI/lm-evaluation-harness.git@v0.4.5
 
 ### Minimal Example
 ```
-bash scripts/llama_2_7b.sh
+bash scripts/llama_2_7b.sh <gpu_id>
 ```
 
 This script will prune llama-2-7b model with sparsity (`s`) of 30%, 40%, 50%, corresponding the `rates=("0.7" "0.60" "0.50")` (`1-s`) in the script. If needed, modify the dataset path in `datautils` folder. Each experiment has an independent directory, with `prune_info.pt` saved, which is critical for model pruning. More details can be found in `pgpruning.py`.
