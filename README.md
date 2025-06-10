@@ -30,6 +30,17 @@ bash scripts/llama_2_7b.sh
 
 This script will prune llama-2-7b model with sparsity (`s`) of 30%, 40%, 50%, corresponding the `rates=("0.7" "0.60" "0.50")` (`1-s`) in the script. If needed, modify the dataset path in `datautils` folder. Each experiment has an independent directory, with `prune_info.pt` saved, which is critical for model pruning. More details can be found in `pgpruning.py`.
 
+### Evaluate Pruned Model
+```
+python prune_channel/eval.py \
+    --exp-dir <pruned_model_path> \
+    --max-seq-length 128 \
+    --global-hard-mask \
+    --batch-size 8
+```
+
+Specifically, `<pruned_model_path>` is the directory where the `prune_info` saved.
+
 
 ## Citation
 If you find this project useful, please cite
