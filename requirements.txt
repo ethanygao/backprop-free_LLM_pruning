@@ -1,0 +1,12 @@
+torch==2.1.2
+transformers==4.37.0
+datasets
+sentencepiece
+accelerate
+jsonlines
+matplotlib
+# For lm-evaluation-harness
+lm_eval==0.4.5
+# For finetuning
+Jinja2
+peft==0.11.1
